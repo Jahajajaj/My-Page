@@ -1,0 +1,6 @@
+[build]
+  publish = "."  # Serve files from the repo root (your index.html)
+
+[[edge_functions]]
+  function = "track"
+  path = "/*"
