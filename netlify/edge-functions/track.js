@@ -10,3 +10,8 @@ export default async (request, context) => {
     return new Response('Internal Server Error', { status: 500 });
   }
 };
+
+export const config = {
+  path: "/*",
+  onError: "bypass"  // Or 'fail' for default page; use a function for custom response
+};
