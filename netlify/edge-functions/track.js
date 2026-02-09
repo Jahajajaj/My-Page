@@ -4,7 +4,7 @@ export default async (request, context) => {
     const ip = context.ip || 'Unknown';
     console.log('Visitor IP:', ip);
     console.log('Visitor from:', geo);
-    return request;
+    return await context.next();  // Proceed to origin and return its Response
   } catch (error) {
     console.error('Function error:', error.message, error.stack);
     return new Response('Internal Server Error', { status: 500 });
